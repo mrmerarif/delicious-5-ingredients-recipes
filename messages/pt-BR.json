@@ -1,0 +1,126 @@
+
+{
+  "brand": {
+    "name": "Delicious 5 Ingredients Recipes",
+    "tagline": "Ingredientes simples. Possibilidades deliciosas."
+  },
+  "navigation": {
+    "home": "Início",
+    "recipes": "Receitas",
+    "pantry": "Minha despensa",
+    "mealPlanner": "Planejamento de refeições",
+    "favorites": "Favoritos",
+    "community": "Comunidade",
+    "about": "Sobre nós",
+    "login": "Entrar",
+    "signup": "Criar conta",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Bem-vindo ao seu espaço de inspiração na cozinha",
+    "title": "O que posso preparar com os ingredientes que já tenho?",
+    "description": "Transforme ingredientes do dia a dia em refeições deliciosas. Encontre receitas fáceis, descubra novas ideias e aproveite o que você já tem em casa.",
+    "searchPlaceholder": "Digite ingredientes como frango, arroz, tomate...",
+    "searchButton": "Buscar receitas",
+    "exploreButton": "Explorar receitas"
+  },
+  "search": {
+    "title": "Encontre sua próxima refeição",
+    "addIngredient": "Adicionar ingrediente",
+    "removeIngredient": "Remover ingrediente",
+    "clearAll": "Limpar tudo",
+    "results": "Resultados da busca",
+    "noResults": "Nenhuma receita encontrada. Tente outros ingredientes.",
+    "loading": "Buscando receitas deliciosas...",
+    "error": "Não foi possível carregar as receitas. Tente novamente.",
+    "missingIngredients": "Ingredientes que faltam",
+    "ingredientsAvailable": "Ingredientes que você tem",
+    "match": "Compatibilidade de ingredientes"
+  },
+  "recipes": {
+    "featuredTitle": "Receitas em destaque",
+    "featuredDescription": "Descubra ideias deliciosas selecionadas para sua cozinha.",
+    "popularTitle": "Receitas mais populares",
+    "viewRecipe": "Ver receita",
+    "viewAll": "Ver todas as receitas",
+    "ingredients": "Ingredientes",
+    "instructions": "Modo de preparo",
+    "prepTime": "Tempo de preparo",
+    "cookTime": "Tempo de cozimento",
+    "totalTime": "Tempo total",
+    "servings": "Porções",
+    "minutes": "min",
+    "startCooking": "Começar a cozinhar",
+    "saveRecipe": "Salvar receita",
+    "addToPlanner": "Adicionar ao planejamento",
+    "notAvailable": "Não disponível"
+  },
+  "categories": {
+    "title": "Explore por tipo de refeição",
+    "breakfast": "Café da manhã",
+    "lunch": "Almoço",
+    "dinner": "Jantar",
+    "snack": "Lanches",
+    "dessert": "Sobremesas",
+    "other": "Outros",
+    "all": "Todas as receitas"
+  },
+  "pantry": {
+    "title": "Minha despensa inteligente",
+    "description": "Organize os ingredientes que você já tem e descubra o que pode preparar.",
+    "addItem": "Adicionar à despensa",
+    "myIngredients": "Meus ingredientes",
+    "findMatches": "Encontrar receitas compatíveis",
+    "empty": "Sua despensa está vazia. Adicione alguns ingredientes para começar."
+  },
+  "planner": {
+    "title": "Meu planejamento de refeições para 7 dias",
+    "description": "Planeje suas refeições, aproveite os ingredientes que já tem e facilite suas compras.",
+    "breakfast": "Café da manhã",
+    "lunch": "Almoço",
+    "dinner": "Jantar",
+    "generatePlan": "Criar meu planejamento",
+    "shoppingList": "Lista de compras",
+    "addMeal": "Adicionar refeição",
+    "days": {
+      "monday": "Segunda-feira",
+      "tuesday": "Terça-feira",
+      "wednesday": "Quarta-feira",
+      "thursday": "Quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    }
+  },
+  "cooking": {
+    "title": "Modo de preparo",
+    "nextStep": "Próximo passo",
+    "previousStep": "Passo anterior",
+    "finish": "Finalizar preparo",
+    "step": "Passo",
+    "timer": "Temporizador",
+    "complete": "Concluído"
+  },
+  "community": {
+    "title": "Compartilhe suas receitas",
+    "description": "Compartilhe suas receitas caseiras favoritas com nossa comunidade.",
+    "submitRecipe": "Enviar receita",
+    "myRecipes": "Minhas receitas",
+    "pendingReview": "Aguardando revisão"
+  },
+  "affiliate": {
+    "title": "Utensílios essenciais",
+    "description": "Utensílios úteis para facilitar o preparo das refeições.",
+    "shopNow": "Ver produto",
+    "disclosure": "Alguns links podem gerar uma comissão para nós, sem custo adicional para você."
+  },
+  "footer": {
+    "description": "Facilitando a cozinha do dia a dia, um ingrediente de cada vez.",
+    "quickLinks": "Links rápidos",
+    "followUs": "Siga-nos",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso",
+    "contact": "Contato",
+    "copyright": "Todos os direitos reservados."
+  }
+}
