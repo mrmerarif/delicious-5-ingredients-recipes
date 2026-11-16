@@ -1,26 +1,311 @@
+
 @import "tailwindcss";
 
+/*
+ * Delicious 5 Ingredients Recipes
+ * Modern Kitchen Design System
+ *
+ * Centralized colors, spacing, typography,
+ * buttons, cards, and responsive styling.
+ *
+ * Change the theme variables here to
+ * update the website's appearance.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Main brand colors */
+  --fsm-primary: #2b2b2b;
+  --fsm-secondary: #ffffff;
+  --fsm-accent: #a83226;
+  --fsm-accent-2: #f2c14e;
+  --fsm-accent-3: #2b2b2b;
+  --fsm-card-bg: #f5f5f5;
+
+  /* Brand aliases */
+  --brand-primary: var(--fsm-primary);
+  --brand-secondary: var(--fsm-secondary);
+  --brand-accent: var(--fsm-accent);
+
+  /* Website backgrounds */
+  --background: var(--fsm-secondary);
+  --surface: var(--fsm-secondary);
+  --surface-muted: var(--fsm-card-bg);
+
+  /* Text and borders */
+  --foreground: var(--fsm-primary);
+  --text-muted: #555555;
+  --border-color: #d4d4d4;
+
+  /* Header colors */
+  --header-language-bg: var(--fsm-card-bg);
+  --header-language-text: var(--fsm-primary);
+
+  --header-divider: var(--fsm-accent-2);
+
+  --header-nav-bg: var(--fsm-primary);
+  --header-nav-text: var(--fsm-secondary);
+  --header-nav-muted: #e5e5e5;
+  --header-nav-hover: var(--fsm-accent-2);
+
+  --header-logo-bg: var(--fsm-accent);
+  --header-logo-text: var(--fsm-secondary);
+
+  --header-language-active-bg: var(--fsm-accent);
+  --header-language-active-text: var(--fsm-secondary);
+
+  /* Buttons */
+  --button-primary: var(--fsm-accent);
+  --button-primary-hover: #84271e;
+  --button-primary-text: var(--fsm-secondary);
+
+  --button-accent: var(--fsm-accent-2);
+  --button-accent-hover: #e3af36;
+  --button-accent-text: var(--fsm-primary);
+
+  /* Accessibility */
+  --focus-color: var(--fsm-accent);
+  --focus-on-dark: var(--fsm-accent-2);
+
+  /* Typography */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: Arial, Helvetica, sans-serif;
+
+  /* Spacing */
+  --spacing-section: 5rem;
+  --spacing-container: 1.5rem;
+
+  /* Border radius */
+  --radius-small: 0.5rem;
+  --radius-medium: 0.875rem;
+  --radius-large: 1.25rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 18px rgb(43 43 43 / 8%);
+  --shadow-card-hover: 0 8px 28px rgb(43 43 43 / 14%);
+
+  /* Layout */
+  --container-width: 1200px;
+
+  /* Animation */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
 }
+
+/* Tailwind CSS 4 integration */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--fsm-primary);
+  --color-secondary: var(--fsm-secondary);
+  --color-accent: var(--fsm-accent);
+  --color-accent-gold: var(--fsm-accent-2);
+
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border-color);
+
+  --font-sans: var(--font-body);
+
+  --radius-card: var(--radius-large);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Forms and interactive elements */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
+}
+
+/* Text selection */
+
+::selection {
+  background-color: var(--fsm-accent-2);
+  color: var(--fsm-primary);
+}
+
+/* Shared layout utilities */
+
+.site-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-container);
+}
+
+.section-spacing {
+  padding-block: var(--spacing-section);
+}
+
+/* Primary button */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: var(--button-primary);
+  color: var(--button-primary-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-primary-hover);
+}
+
+/* Gold accent button */
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: var(--button-accent);
+  color: var(--button-accent-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-accent:hover {
+  background-color: var(--button-accent-hover);
+}
+
+/* Reusable recipe card */
+
+.recipe-card {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-large);
+  background-color: var(--fsm-card-bg);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+@media (hover: hover) {
+  .recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+/* Header accessibility */
+
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 3px solid var(--focus-on-dark);
+  outline-offset: 3px;
+}
+
+.language-row a:focus-visible {
+  outline-color: var(--focus-color);
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-section: 3.5rem;
+    --spacing-container: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-section: 2.75rem;
+    --spacing-container: 1rem;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

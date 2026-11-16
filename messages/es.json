@@ -1,0 +1,126 @@
+
+{
+  "brand": {
+    "name": "Delicious 5 Ingredients Recipes",
+    "tagline": "Ingredientes sencillos. Posibilidades deliciosas."
+  },
+  "navigation": {
+    "home": "Inicio",
+    "recipes": "Recetas",
+    "pantry": "Mi despensa",
+    "mealPlanner": "Plan de comidas",
+    "favorites": "Favoritos",
+    "community": "Comunidad",
+    "about": "Nosotros",
+    "login": "Iniciar sesión",
+    "signup": "Crear cuenta",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Bienvenido a tu espacio de inspiración culinaria",
+    "title": "¿Qué puedo cocinar con los ingredientes que ya tengo?",
+    "description": "Convierte los ingredientes de todos los días en comidas deliciosas. Encuentra recetas fáciles, descubre nuevas ideas y aprovecha lo que ya tienes en casa.",
+    "searchPlaceholder": "Escribe ingredientes como pollo, arroz, tomates...",
+    "searchButton": "Buscar recetas",
+    "exploreButton": "Explorar recetas"
+  },
+  "search": {
+    "title": "Encuentra tu próxima comida",
+    "addIngredient": "Agregar ingrediente",
+    "removeIngredient": "Quitar ingrediente",
+    "clearAll": "Borrar todo",
+    "results": "Resultados de búsqueda",
+    "noResults": "No encontramos recetas. Prueba con otros ingredientes.",
+    "loading": "Buscando recetas deliciosas...",
+    "error": "No pudimos cargar las recetas. Inténtalo de nuevo.",
+    "missingIngredients": "Ingredientes que faltan",
+    "ingredientsAvailable": "Ingredientes que tienes",
+    "match": "Coincidencia de ingredientes"
+  },
+  "recipes": {
+    "featuredTitle": "Recetas destacadas",
+    "featuredDescription": "Descubre ideas deliciosas seleccionadas para tu cocina.",
+    "popularTitle": "Recetas más populares",
+    "viewRecipe": "Ver receta",
+    "viewAll": "Ver todas las recetas",
+    "ingredients": "Ingredientes",
+    "instructions": "Instrucciones",
+    "prepTime": "Tiempo de preparación",
+    "cookTime": "Tiempo de cocción",
+    "totalTime": "Tiempo total",
+    "servings": "Porciones",
+    "minutes": "min",
+    "startCooking": "Empezar a cocinar",
+    "saveRecipe": "Guardar receta",
+    "addToPlanner": "Agregar al plan de comidas",
+    "notAvailable": "No disponible"
+  },
+  "categories": {
+    "title": "Explora por tipo de comida",
+    "breakfast": "Desayuno",
+    "lunch": "Almuerzo",
+    "dinner": "Cena",
+    "snack": "Botanas",
+    "dessert": "Postres",
+    "other": "Otros",
+    "all": "Todas las recetas"
+  },
+  "pantry": {
+    "title": "Mi despensa inteligente",
+    "description": "Lleva un registro de los ingredientes que tienes y descubre qué puedes cocinar.",
+    "addItem": "Agregar a mi despensa",
+    "myIngredients": "Mis ingredientes",
+    "findMatches": "Buscar recetas compatibles",
+    "empty": "Tu despensa está vacía. Agrega algunos ingredientes para comenzar."
+  },
+  "planner": {
+    "title": "Mi plan de comidas de 7 días",
+    "description": "Organiza tus comidas, aprovecha los ingredientes que tienes y facilita tus compras.",
+    "breakfast": "Desayuno",
+    "lunch": "Almuerzo",
+    "dinner": "Cena",
+    "generatePlan": "Crear mi plan de comidas",
+    "shoppingList": "Lista de compras",
+    "addMeal": "Agregar comida",
+    "days": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    }
+  },
+  "cooking": {
+    "title": "Modo de cocina",
+    "nextStep": "Siguiente paso",
+    "previousStep": "Paso anterior",
+    "finish": "Terminar de cocinar",
+    "step": "Paso",
+    "timer": "Temporizador",
+    "complete": "Completado"
+  },
+  "community": {
+    "title": "Comparte tus recetas",
+    "description": "Comparte tus recetas caseras favoritas con nuestra comunidad.",
+    "submitRecipe": "Enviar una receta",
+    "myRecipes": "Mis recetas",
+    "pendingReview": "Pendiente de revisión"
+  },
+  "affiliate": {
+    "title": "Utensilios de cocina",
+    "description": "Herramientas útiles para cocinar más fácilmente todos los días.",
+    "shopNow": "Ver producto",
+    "disclosure": "Algunos enlaces pueden generar una comisión para nosotros sin costo adicional para ti."
+  },
+  "footer": {
+    "description": "Haciendo más fácil la cocina de todos los días, un ingrediente a la vez.",
+    "quickLinks": "Enlaces rápidos",
+    "followUs": "Síguenos",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "contact": "Contacto",
+    "copyright": "Todos los derechos reservados."
+  }
+}

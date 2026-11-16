@@ -1,0 +1,126 @@
+
+{
+  "brand": {
+    "name": "Delicious 5 Ingredients Recipes",
+    "tagline": "Simple ingredients. Delicious possibilities."
+  },
+  "navigation": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "pantry": "My Pantry",
+    "mealPlanner": "Meal Planner",
+    "favorites": "Favorites",
+    "community": "Community",
+    "about": "About",
+    "login": "Sign In",
+    "signup": "Create Account",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Welcome to your kitchen inspiration",
+    "title": "What can I make with the ingredients I already have?",
+    "description": "Turn everyday ingredients into delicious meals. Find easy recipes, discover new ideas, and make the most of what's already in your kitchen.",
+    "searchPlaceholder": "Enter ingredients like chicken, rice, tomatoes...",
+    "searchButton": "Find Recipes",
+    "exploreButton": "Explore Recipes"
+  },
+  "search": {
+    "title": "Find Your Next Meal",
+    "addIngredient": "Add Ingredient",
+    "removeIngredient": "Remove Ingredient",
+    "clearAll": "Clear All",
+    "results": "Search Results",
+    "noResults": "No recipes found. Try different ingredients.",
+    "loading": "Finding delicious recipes...",
+    "error": "We couldn't load recipes right now. Please try again.",
+    "missingIngredients": "Missing Ingredients",
+    "ingredientsAvailable": "Ingredients You Have",
+    "match": "Ingredient Match"
+  },
+  "recipes": {
+    "featuredTitle": "Featured Recipes",
+    "featuredDescription": "Discover delicious ideas selected for your kitchen.",
+    "popularTitle": "Most Popular Recipes",
+    "viewRecipe": "View Recipe",
+    "viewAll": "View All Recipes",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "prepTime": "Prep Time",
+    "cookTime": "Cook Time",
+    "totalTime": "Total Time",
+    "servings": "Servings",
+    "minutes": "min",
+    "startCooking": "Start Cooking",
+    "saveRecipe": "Save Recipe",
+    "addToPlanner": "Add to Meal Planner",
+    "notAvailable": "Not Available"
+  },
+  "categories": {
+    "title": "Explore by Meal",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snack": "Snacks",
+    "dessert": "Desserts",
+    "other": "Other",
+    "all": "All Recipes"
+  },
+  "pantry": {
+    "title": "My Smart Pantry",
+    "description": "Keep track of what you already have and discover meals you can make.",
+    "addItem": "Add to Pantry",
+    "myIngredients": "My Ingredients",
+    "findMatches": "Find Matching Recipes",
+    "empty": "Your pantry is empty. Add a few ingredients to get started."
+  },
+  "planner": {
+    "title": "My 7-Day Meal Plan",
+    "description": "Plan meals, use ingredients you already have, and make grocery shopping easier.",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "generatePlan": "Create My Meal Plan",
+    "shoppingList": "Shopping List",
+    "addMeal": "Add Meal",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "cooking": {
+    "title": "Cooking Mode",
+    "nextStep": "Next Step",
+    "previousStep": "Previous Step",
+    "finish": "Finish Cooking",
+    "step": "Step",
+    "timer": "Cooking Timer",
+    "complete": "Completed"
+  },
+  "community": {
+    "title": "Share Your Recipes",
+    "description": "Share your favorite homemade recipes with our cooking community.",
+    "submitRecipe": "Submit a Recipe",
+    "myRecipes": "My Recipes",
+    "pendingReview": "Pending Review"
+  },
+  "affiliate": {
+    "title": "Kitchen Essentials",
+    "description": "Helpful kitchen tools to make everyday cooking easier.",
+    "shopNow": "View Product",
+    "disclosure": "Some links may earn us a commission at no additional cost to you."
+  },
+  "footer": {
+    "description": "Making everyday cooking easier, one ingredient at a time.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  }
+}
