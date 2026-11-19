@@ -29,7 +29,7 @@ export default function Header({
     },
     {
       label: dictionary.navigation.recipes,
-      href: `/${locale}/recipes`,
+      href: `/${locale}/search`,
     },
     {
       label: dictionary.navigation.pantry,
@@ -48,6 +48,10 @@ export default function Header({
   function isActiveRoute(href: string) {
     if (href === `/${locale}`) {
       return pathname === href;
+    }
+
+    if (href === `/${locale}/search` && pathname.startsWith(`/${locale}/recipes/`)) {
+      return true;
     }
 
     return (
