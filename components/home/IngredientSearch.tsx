@@ -14,7 +14,7 @@ export default function IngredientSearch({
 }: IngredientSearchProps) {
   return (
     <form
-      action={`/${locale}/recipes`}
+      action={`/${locale}/search`}
       method="GET"
       role="search"
       className="flex w-full flex-col gap-3 sm:flex-row"
