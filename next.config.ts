@@ -9,6 +9,18 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
 
+  // Allow recipe images from TheMealDB.
+  // Keep external image access restricted to trusted sources.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.themealdb.com",
+        pathname: "/images/**",
+      },
+    ],
+  },
+
   // Tailwind CSS 4 with Turbopack
   turbopack: {
     rules: {

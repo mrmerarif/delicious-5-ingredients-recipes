@@ -47,14 +47,14 @@ async function LocalizedHome({
       />
 
       <main id="main-content">
-        {/* Compact kitchen essentials carousel */}
-        <KitchenEssentialsCarousel
+        {/* Main recipe search hero */}
+        <HeroSection
           locale={locale}
           dictionary={dictionary}
         />
 
-        {/* Main recipe search hero */}
-        <HeroSection
+        {/* Compact kitchen essentials carousel */}
+        <KitchenEssentialsCarousel
           locale={locale}
           dictionary={dictionary}
         />
