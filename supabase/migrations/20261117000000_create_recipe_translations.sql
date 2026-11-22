@@ -83,3 +83,26 @@ revoke all on public.recipe_translations
 grant select, insert, update
   on public.recipe_translations
   to service_role;
+
+-- Maintain the timestamp for all edits, including dashboard corrections.
+
+create function public.set_recipe_translation_updated_at()
+returns trigger
+language plpgsql
+security invoker
+set search_path = ''
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+revoke execute
+  on function public.set_recipe_translation_updated_at()
+  from public, anon, authenticated;
+
+create trigger recipe_translations_set_updated_at
+before update on public.recipe_translations
+for each row
+execute function public.set_recipe_translation_updated_at();
