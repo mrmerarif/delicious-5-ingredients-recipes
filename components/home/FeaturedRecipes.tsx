@@ -152,7 +152,7 @@ export default function FeaturedRecipes({
           </div>
 
           <Link
-            href={`/${locale}/recipes`}
+            href={`/${locale}/search`}
             className="btn-primary self-start"
           >
             {dictionary.recipes.viewAll}
