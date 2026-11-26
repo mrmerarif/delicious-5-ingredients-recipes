@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import LanguageSwitcher from "./LanguageSwitcher";
+import AuthLinks from "./AuthLinks";
 
 import type { Locale } from "../../lib/i18n/config";
 import type { Dictionary } from "../../lib/i18n/dictionaries";
@@ -143,6 +144,14 @@ export default function Header({
               })}
             </nav>
 
+            {/* Desktop sign in / sign out */}
+            <AuthLinks
+              locale={locale}
+              loginLabel={dictionary.navigation.login}
+              signupLabel={dictionary.navigation.signup}
+              className="hidden lg:flex"
+            />
+
             {/* Mobile menu button */}
             <button
               type="button"
@@ -186,6 +195,15 @@ export default function Header({
                   </Link>
                 );
               })}
+
+              {/* Mobile sign in / sign out */}
+              <AuthLinks
+                locale={locale}
+                loginLabel={dictionary.navigation.login}
+                signupLabel={dictionary.navigation.signup}
+                onNavigate={() => setMenuOpen(false)}
+                className="mt-2 flex-wrap border-t border-white/20 pt-3"
+              />
             </div>
           </nav>
         )}
