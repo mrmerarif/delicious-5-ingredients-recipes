@@ -5,9 +5,11 @@ import { notFound } from "next/navigation";
 
 import Header from "../../../../components/layout/Header";
 import Footer from "../../../../components/layout/Footer";
+
 import RecipeDetails from "../../../../components/recipes/RecipeDetails";
 import AddToMealPlanner from "../../../../components/recipes/AddToMealPlanner";
 import SearchAnotherRecipe from "../../../../components/recipes/SearchAnotherRecipe";
+import SuggestedRecipes from "../../../../components/recipes/SuggestedRecipes";
 
 import {
   getLocalizedPath,
@@ -15,6 +17,7 @@ import {
 } from "../../../../lib/i18n/config";
 
 import { getDictionary } from "../../../../lib/i18n/dictionaries";
+
 import { getLocalizedRecipe } from "../../../../lib/recipes/getLocalizedRecipe";
 
 interface RecipeDetailsPageProps {
@@ -34,7 +37,11 @@ async function RecipeDetailsContent({
   }
 
   const dictionary = await getDictionary(locale);
-  const recipe = await getLocalizedRecipe(id, locale);
+
+  const recipe = await getLocalizedRecipe(
+    id,
+    locale
+  );
 
   const actionClass =
     "inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[var(--fsm-accent)] px-4 py-2 text-center text-sm font-semibold text-[var(--fsm-accent)] transition-colors hover:bg-[var(--surface-muted)]";
@@ -58,17 +65,22 @@ async function RecipeDetailsContent({
                   <Link
                     href={getLocalizedPath(
                       locale,
-                      "/recipes"
+                      "/search"
                     )}
                     className={actionClass}
                   >
-                    <span aria-hidden="true">←</span>
+                    <span aria-hidden="true">
+                      ←
+                    </span>
+
                     {dictionary.recipes.viewAll}
                   </Link>
                 </div>
 
                 <div className="flex justify-start sm:justify-center">
-                  <SearchAnotherRecipe locale={locale} />
+                  <SearchAnotherRecipe
+                    locale={locale}
+                  />
                 </div>
 
                 <div className="flex justify-start sm:justify-end">
@@ -83,17 +95,52 @@ async function RecipeDetailsContent({
                 recipe={recipe}
                 dictionary={dictionary}
               />
+
+              <Suspense
+                fallback={
+                  <section
+                    className="mt-12 border-t border-[var(--surface-muted)] pt-10"
+                    aria-busy="true"
+                  >
+                    <h2 className="text-2xl font-bold text-[var(--foreground)]">
+                      {
+                        dictionary.recipes
+                          .suggestedTitle
+                      }
+                    </h2>
+
+                    <p
+                      role="status"
+                      className="mt-3 text-[var(--text-muted)]"
+                    >
+                      {
+                        dictionary.recipes
+                          .suggestedLoading
+                      }
+                    </p>
+                  </section>
+                }
+              >
+                <SuggestedRecipes
+                  recipeId={recipe.id}
+                  locale={locale}
+                  dictionary={dictionary}
+                />
+              </Suspense>
             </>
           ) : (
             <>
               <Link
                 href={getLocalizedPath(
                   locale,
-                  "/recipes"
+                  "/search"
                 )}
                 className={actionClass}
               >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">
+                  ←
+                </span>
+
                 {dictionary.recipes.viewAll}
               </Link>
 
@@ -105,7 +152,10 @@ async function RecipeDetailsContent({
                   id="recipe-not-found-title"
                   className="text-3xl font-bold text-[var(--foreground)]"
                 >
-                  {dictionary.recipes.notAvailable}
+                  {
+                    dictionary.recipes
+                      .notAvailable
+                  }
                 </h1>
 
                 <p className="mx-auto mt-4 max-w-xl text-[var(--text-muted)]">
@@ -149,9 +199,10 @@ export default function RecipeDetailsPage({
   params,
 }: RecipeDetailsPageProps) {
   return (
-    <Suspense fallback={<RecipeDetailsLoading />}>
+    <Suspense
+      fallback={<RecipeDetailsLoading />}
+    >
       <RecipeDetailsContent params={params} />
     </Suspense>
   );
 }
-

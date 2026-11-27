@@ -85,7 +85,7 @@ export default function SearchAnotherRecipe({
     });
 
     router.push(
-      `/${language}/recipes?${params.toString()}`
+      `/${language}/search?${params.toString()}`
     );
   }
 
@@ -153,6 +153,7 @@ export default function SearchAnotherRecipe({
                 setError("");
               }}
               placeholder={t.placeholder}
+              maxLength={100}
               className="min-h-11 w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--fsm-accent)]"
             />
 

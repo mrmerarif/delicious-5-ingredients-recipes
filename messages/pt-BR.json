@@ -60,7 +60,13 @@
                     "recipeMatch":  "Compatibilidade de ingredientes",
                     "stepsCompleted":  "Etapas concluídas",
                     "stepsDone":  "Feito",
-                    "shoppingList":  "Lista de compras"
+                    "shoppingList":  "Lista de compras",
+                    "previousRecipes":  "Receitas anteriores",
+                    "suggestedDescription":  "Descubra mais receitas deliciosas com ingredientes e sabores semelhantes.",
+                    "suggestedError":  "Não foi possível carregar as receitas sugeridas.",
+                    "nextRecipes":  "Próximas receitas",
+                    "suggestedLoading":  "Buscando sugestões deliciosas...",
+                    "suggestedTitle":  "Você também pode gostar"
                 },
     "categories":  {
                        "title":  "Explore por tipo de refeição",

@@ -4,7 +4,7 @@
  * Localized recipe coordinator.
  *
  * Retrieves recipes, checks stored translations,
- * and optionally requests automatic translation.
+ * and optionally requests and saves translations.
  */
 
 import "server-only";
@@ -15,10 +15,19 @@ import type { Locale } from "../i18n/config";
 import type { Recipe } from "../../types/recipe";
 
 import { getRecipeById } from "./getRecipeById";
-import { getCachedTranslation } from "../translation/cache";
-import { googleTranslationProvider } from "../translation/google";
 
-function createRecipeHash(recipe: Recipe): string {
+import {
+  getCachedTranslation,
+  saveTranslation,
+} from "../translation/cache";
+
+import {
+  googleTranslationProvider,
+} from "../translation/google";
+
+export function createRecipeHash(
+  recipe: Recipe
+): string {
   const sourceContent = JSON.stringify({
     title: recipe.title,
     description: recipe.description ?? "",
@@ -42,32 +51,47 @@ async function translateRecipe(
       (ingredient) => ingredient.name
     ),
     ...recipe.ingredients.map(
-      (ingredient) => ingredient.originalText ?? ""
+      (ingredient) =>
+        ingredient.originalText ?? ""
     ),
     ...recipe.instructions,
   ];
 
-  const result = await googleTranslationProvider.translate({
-    texts,
-    sourceLocale: "en",
-    targetLocale: locale,
-  });
+  // Avoid sending empty strings for translation.
+  const nonEmptyTexts = texts.filter(
+    (text) => text.trim().length > 0
+  );
+
+  const result =
+    await googleTranslationProvider.translate({
+      texts: nonEmptyTexts,
+      sourceLocale: "en",
+      targetLocale: locale,
+    });
+
+  let translatedIndex = 0;
+
+  const translatedTexts = texts.map((text) =>
+    text.trim().length > 0
+      ? result.texts[translatedIndex++]
+      : text
+  );
 
   let index = 0;
 
-  const title = result.texts[index++];
-  const description = result.texts[index++];
+  const title = translatedTexts[index++];
+  const description = translatedTexts[index++];
 
   const ingredientNames = recipe.ingredients.map(
-    () => result.texts[index++]
+    () => translatedTexts[index++]
   );
 
   const ingredientTexts = recipe.ingredients.map(
-    () => result.texts[index++]
+    () => translatedTexts[index++]
   );
 
   const instructions = recipe.instructions.map(
-    () => result.texts[index++]
+    () => translatedTexts[index++]
   );
 
   return {
@@ -75,14 +99,17 @@ async function translateRecipe(
     title,
     description: description || undefined,
     imageAlt: title,
+
     ingredients: recipe.ingredients.map(
       (ingredient, ingredientIndex) => ({
         ...ingredient,
         name: ingredientNames[ingredientIndex],
         originalText:
-          ingredientTexts[ingredientIndex] || undefined,
+          ingredientTexts[ingredientIndex] ||
+          undefined,
       })
     ),
+
     instructions,
   };
 }
@@ -113,8 +140,6 @@ export async function getLocalizedRecipe(
     return cached;
   }
 
-  // Translation is disabled until we configure
-  // credentials, quotas, and cost controls.
   if (
     process.env.ENABLE_AUTOMATIC_RECIPE_TRANSLATION !==
     "true"
@@ -123,7 +148,17 @@ export async function getLocalizedRecipe(
   }
 
   try {
-    return await translateRecipe(recipe, locale);
+    const translatedRecipe =
+      await translateRecipe(recipe, locale);
+
+    await saveTranslation({
+      recipe: translatedRecipe,
+      locale,
+      sourceHash,
+      method: "automatic",
+    });
+
+    return translatedRecipe;
   } catch (error) {
     console.error(
       "Unable to translate recipe:",
@@ -135,4 +170,3 @@ export async function getLocalizedRecipe(
     return recipe;
   }
 }
-

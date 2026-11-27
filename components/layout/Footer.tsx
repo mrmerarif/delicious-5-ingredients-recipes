@@ -22,7 +22,7 @@ export default function Footer({
     },
     {
       label: dictionary.navigation.recipes,
-      href: `/${locale}/recipes`,
+      href: `/${locale}/search`,
     },
     {
       label: dictionary.navigation.pantry,

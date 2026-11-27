@@ -1,4 +1,3 @@
-
 import "server-only";
 
 import type {
@@ -21,6 +20,11 @@ interface MealDBResponse {
   meals: MealDBMeal[] | null;
 }
 
+const BASE_URL = (
+  process.env.RECIPE_API_BASE_URL ??
+  "https://www.themealdb.com/api/json/v1/1"
+).replace(/\/$/, "");
+
 function extractIngredients(
   meal: MealDBMeal
 ): RecipeIngredient[] {
@@ -28,6 +32,7 @@ function extractIngredients(
 
   for (let index = 1; index <= 20; index++) {
     const name = meal[`strIngredient${index}`]?.trim();
+
     const measurement =
       meal[`strMeasure${index}`]?.trim();
 
@@ -66,9 +71,7 @@ export async function getRecipeById(
     return null;
   }
 
-  const url = new URL(
-    "https://www.themealdb.com/api/json/v1/1/lookup.php"
-  );
+  const url = new URL(`${BASE_URL}/lookup.php`);
 
   url.searchParams.set("i", id);
 
@@ -77,6 +80,7 @@ export async function getRecipeById(
       next: {
         revalidate: 3600,
       },
+      signal: AbortSignal.timeout(8000),
     });
 
     if (!response.ok) {
@@ -84,6 +88,7 @@ export async function getRecipeById(
         "TheMealDB recipe lookup failed:",
         response.status
       );
+
       return null;
     }
 
@@ -100,16 +105,28 @@ export async function getRecipeById(
       id: meal.idMeal,
       source: "api",
       title: meal.strMeal,
+
       description: meal.strArea
         ? `${meal.strArea} cuisine`
         : undefined,
+
       imageUrl: meal.strMealThumb ?? undefined,
       imageAlt: meal.strMeal,
+
       ingredients: extractIngredients(meal),
+
       instructions: extractInstructions(
         meal.strInstructions
       ),
+
       category: "other",
+
+      providerCategory:
+        meal.strCategory?.trim() || undefined,
+
+      cuisine:
+        meal.strArea?.trim() || undefined,
+
       sourceUrl: meal.strSource ?? undefined,
     };
   } catch (error) {

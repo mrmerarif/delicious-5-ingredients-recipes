@@ -60,7 +60,13 @@
                     "recipeMatch":  "Recipe Match",
                     "stepsCompleted":  "Steps completed",
                     "stepsDone":  "Done",
-                    "shoppingList":  "Shopping List"
+                    "shoppingList":  "Shopping List",
+                    "previousRecipes":  "Previous recipes",
+                    "suggestedDescription":  "Discover more delicious recipes with similar ingredients and flavors.",
+                    "suggestedError":  "Unable to load suggested recipes.",
+                    "nextRecipes":  "Next recipes",
+                    "suggestedLoading":  "Finding delicious suggestions...",
+                    "suggestedTitle":  "You May Also Like"
                 },
     "categories":  {
                        "title":  "Explore by Meal",
