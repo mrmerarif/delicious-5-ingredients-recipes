@@ -2,19 +2,26 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Hide the Next.js development indicator
+  // Hide the Next.js development indicator.
   devIndicators: false,
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "www.themealdb.com", pathname: "/images/media/meals/**" },
-    ],
-  },
 
-  // Existing project configuration
+  // Existing project configuration.
   cacheComponents: true,
   partialPrefetching: true,
 
-  // Tailwind CSS 4 with Turbopack
+  // Allow recipe images from TheMealDB.
+  // Keep external image access restricted to trusted sources.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.themealdb.com",
+        pathname: "/images/**",
+      },
+    ],
+  },
+
+  // Tailwind CSS 4 with Turbopack.
   turbopack: {
     rules: {
       "*.css": {

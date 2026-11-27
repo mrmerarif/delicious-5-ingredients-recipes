@@ -1,10 +1,9 @@
-
 /**
  * Delicious 5 Ingredients Recipes
  * Shared recipe data types.
  *
  * Used by the frontend, recipe API integration,
- * and Supabase data mapping.
+ * recommendation services, and Supabase data mapping.
  */
 
 export type RecipeSource = "api" | "supabase";
@@ -42,7 +41,13 @@ export interface Recipe {
   totalMinutes?: number;
 
   servings?: number;
+
+  // Internal meal category.
   category?: MealCategory;
+
+  // Original category and cuisine from the recipe provider.
+  providerCategory?: string;
+  cuisine?: string;
 
   isFeatured?: boolean;
   visitCount?: number;
@@ -63,4 +68,12 @@ export interface RecipeSearchResult {
   totalResults: number;
   page: number;
   hasMore: boolean;
+}
+
+export interface SuggestedRecipe {
+  id: string;
+  title: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  matchScore: number;
 }
